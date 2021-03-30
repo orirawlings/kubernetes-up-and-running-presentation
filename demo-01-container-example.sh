@@ -4,14 +4,15 @@ cd $(dirname $0)
 
 set -x
 
+clear
 cat container-example/Dockerfile
 read
 cat container-example/my-script.sh
 read
 docker build -t container-example:latest container-example/
-read
+read && clear
 docker images container-example
-read
+read && clear
 docker run container-example:latest
-read
+read && clear
 docker run -it container-example:latest --
