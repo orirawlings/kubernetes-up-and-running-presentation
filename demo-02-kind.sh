@@ -12,3 +12,5 @@ read && clear
 kind create cluster
 read
 kind load docker-image container-example:latest
+read
+kind load docker-image gcr.io/kuar-demo/kuard-amd64:blue
