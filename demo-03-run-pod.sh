@@ -7,7 +7,6 @@ set -x
 # Run a new pod with the kuard container image
 clear
 kubectl run --image=gcr.io/kuar-demo/kuard-amd64:blue kuard
-kubectl get pods -w
 read
 echo 'Run `kubectl port-forward kuard 8080:8080` and open http://localhost:8080/'
 read
@@ -36,5 +35,4 @@ read
 # Delete the pod
 clear
 kubectl delete pod kuard
-kubectl get pods
 

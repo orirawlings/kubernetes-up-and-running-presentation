@@ -19,5 +19,4 @@ read
 # Delete the pod
 clear
 kubectl delete pod kuard
-kubectl get pods
 
