@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: kuard
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kuard
+      ver: "2"
+  template:
+    metadata:
+      labels:
+        app: kuard
+        ver: "2"
+    spec:
+      containers:
+      - image: gcr.io/kuar-demo/kuard-amd64:blue
+        name: kuard
