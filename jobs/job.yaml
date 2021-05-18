@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: my-job
+spec:
+  parallelism: 1
+  completions: 1
+  backoffLimit: 6
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: my-job
+        image: alpine
+        # sleep for 3 seconds and randomly succeed 50% of attempts
+        command:
+        - /bin/sh
+        - -c
+        - sleep 3; awk 'BEGIN{srand(); exit rand() >= 0.5}' && echo success
